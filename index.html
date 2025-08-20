@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Game</title>
+    <script  type="importmap">{
+	"imports": {
+		"three": "https://threejs.org/build/three.module.js",
+        "game": "/target/js/release/build/main/main.js"
+        }
+    }
+    </script>
+    <script type="module">
+        // 导入three并挂载到全局
+        import * as THREE from 'three';
+        window.THREE = THREE;
+        
+        // 动态导入main.js并执行
+        const mainModule = await import('game');
+    </script>
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+</body>
+
+</html>

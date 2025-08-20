@@ -1,0 +1,11 @@
+{
+    "targets": {
+        "geometry.mbt": ["js"],
+        "test.mbt": ["js"],
+        "render.mbt": ["js"],
+        "scene.mbt": ["js"],
+        "top.mbt": ["js"],
+        "camera.mbt":["js"],
+        "materials.mbt":["js"],
+    }
+}
