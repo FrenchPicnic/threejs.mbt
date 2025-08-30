@@ -3,9 +3,9 @@
 pub type Render
 
 ///|
-pub extern "js" fn Render::new() -> Render =
-  #|function() {
-  #|const canvas = document.querySelector( '#c' );
+pub extern "js" fn Render::new(canvas : String) -> Render =
+  #|function(canavas) {
+  #|const canvas = document.querySelector( canavas );
   #|const renderer = new THREE.WebGLRenderer( { antialias: true, canvas } );
   #|return renderer;
   #|}
@@ -13,8 +13,8 @@ pub extern "js" fn Render::new() -> Render =
 ///|
 pub extern "js" fn Render::render(
   renderer : Render,
-  scene : Scene,
-  camera : Camera,
+  scene : Object,
+  camera : Object,
 ) -> Render =
   #|function(renderer,scene,camera) {
   #|renderer.render( scene, camera );

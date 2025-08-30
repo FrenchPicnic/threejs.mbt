@@ -1,0 +1,34 @@
+{
+  "is-main": true,
+  "import": [],
+  "targets": {
+    "main.mbt": ["js"],
+    "geometry.mbt": [
+      "js"
+    ],
+    "test.mbt": [
+      "js"
+    ],
+    "render.mbt": [
+      "js"
+    ],
+    "scene.mbt": [
+      "js"
+    ],
+    "top.mbt": [
+      "js"
+    ],
+    "camera.mbt": [
+      "js"
+    ],
+    "materials.mbt": [
+      "js"
+    ],
+    "objects.mbt": [
+      "js"
+    ],
+    "mesh.mbt": [
+      "js"
+    ]
+  }
+}
