@@ -3,7 +3,17 @@
 pub type Mesh
 
 ///|
-impl Object3D for Mesh
+impl IsObject for Mesh
+
+///|
+pub impl @js.Cast for Mesh with into(value) {
+  value |> ffi_to_mesh |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for Mesh with from(value) {
+  value |> js_identity
+}
 
 ///|
 pub extern "js" fn Mesh::new(
@@ -15,3 +25,6 @@ pub extern "js" fn Mesh::new(
   #|const mesh = new THREE.Mesh( geometry, material );
   #|return mesh;
   #|}
+
+///|
+pub extern "js" fn ffi_to_mesh(x : @js.Value) -> @js.Nullable[Mesh] = "(x) => x instanceof THREE.Mesh ? x : null"

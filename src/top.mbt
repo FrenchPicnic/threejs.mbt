@@ -1,6 +1,4 @@
 ///|
-#external
-type Three
-
-///|
-pub extern "js" fn export_three() -> Three = "() => require('three')"
+fn[A, B] js_identity(a : A) -> B {
+  @js.Value::cast_from(a).cast()
+}

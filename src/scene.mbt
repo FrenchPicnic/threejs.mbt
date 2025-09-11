@@ -3,11 +3,21 @@
 pub type Scene
 
 ///|
-impl Object3D for Scene
+impl IsObject for Scene
 
 ///|
-pub extern "js" fn Scene::new() -> Object =
-  #|function() {
-  #|const scene = new THREE.Scene();
-  #|return scene;
-  #|}
+pub impl @js.Cast for Scene with into(value) {
+  value |> ffi_to_scene |> _.to_option()
+}
+
+///|
+pub impl @js.Cast for Scene with from(value) {
+  value |> js_identity
+}
+
+///|
+pub extern "js" fn Scene::new() -> Scene =
+  #|() => new THREE.Scene();
+
+///|
+pub extern "js" fn ffi_to_scene(x : @js.Value) -> @js.Nullable[Scene] = "(x) => x instanceof THREE.Scene ? x : null"

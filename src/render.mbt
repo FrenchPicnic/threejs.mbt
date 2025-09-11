@@ -13,9 +13,7 @@ pub extern "js" fn Render::new(canvas : String) -> Render =
 ///|
 pub extern "js" fn Render::render(
   renderer : Render,
-  scene : Object,
-  camera : Object,
-) -> Render =
-  #|function(renderer,scene,camera) {
-  #|renderer.render( scene, camera );
-  #|}
+  scene : @js.Value,
+  camera : Camera,
+) -> Unit =
+  #|(renderer,scene,camera) => renderer.render( scene, camera );

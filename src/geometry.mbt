@@ -43,10 +43,7 @@ pub extern "js" fn newBox(
   heightSegments : Int,
   depthSegments : Int,
 ) -> BufferGeometry =
-  #|function(width,height,depth,widthSegments,heightSegments,depthSegments) {
-  #|const geometry = new THREE.BoxGeometry(width,height,depth,widthSegments,heightSegments,depthSegments);
-  #|return geometry;
-  #|}
+  #|(width,height,depth,widthSegments,heightSegments,depthSegments) => new THREE.BoxGeometry(width,height,depth,widthSegments,heightSegments,depthSegments);
 
 ///|
 pub extern "js" fn newCapsule(
@@ -56,10 +53,7 @@ pub extern "js" fn newCapsule(
   radialSegments : Int,
   heightSegments : Int,
 ) -> BufferGeometry =
-  #|function(radius,height,capSegments,radialSegments,heightSegments) {
-  #|const geometry = new THREE.CapsuleGeometry(radius,height,capSegments,radialSegments,heightSegments);
-  #|return geometry;
-  #|}
+  #|(radius,height,capSegments,radialSegments,heightSegments) =>new THREE.CapsuleGeometry(radius,height,capSegments,radialSegments,heightSegments);
 
 ///|
 pub extern "js" fn newCircle(
@@ -68,10 +62,7 @@ pub extern "js" fn newCircle(
   thetaStart : Float,
   thetaLength : Float,
 ) -> BufferGeometry =
-  #|function(radius,segments,thetaStart,thetaLength) {
-  #|const geometry = new THREE.CircleGeometry(radius,segments,thetaStart,thetaLength);
-  #|return geometry;
-  #|}
+  #|(radius,segments,thetaStart,thetaLength) =>new THREE.CircleGeometry(radius,segments,thetaStart,thetaLength);
 
 ///|
 pub extern "js" fn newCone(
@@ -83,10 +74,7 @@ pub extern "js" fn newCone(
   thetaStart : Float,
   thetaLength : Float,
 ) -> BufferGeometry =
-  #|function(radius,height,radialSegments,heightSegments,openEnded,thetaStart,thetaLength) {
-  #|const geometry = new THREE.ConeGeometry(radius,height,capSegments,radialSegments,heightSegments,openEnded,thetaStart,thetaLength);
-  #|return geometry;
-  #|}
+  #|(radius,height,radialSegments,heightSegments,openEnded,thetaStart,thetaLength) =>new THREE.ConeGeometry(radius,height,capSegments,radialSegments,heightSegments,openEnded,thetaStart,thetaLength);
 
 ///|
 pub extern "js" fn newCylinder(
@@ -99,72 +87,53 @@ pub extern "js" fn newCylinder(
   thetaStart : Float,
   thetaLength : Float,
 ) -> BufferGeometry =
-  #|function(radiusTop,radiusBottom,height,radialSegments,heightSegments,openEnded,thetaStart,thetaLength) {
-  #|const geometry = new THREE.CylinderGeometry(radiusTop,radiusBottom,height,radialSegments,heightSegments,openEnded,thetaStart,thetaLength);
-  #|return geometry;
-  #|}
+  #|(radiusTop,radiusBottom,height,radialSegments,heightSegments,openEnded,thetaStart,thetaLength) =>new THREE.CylinderGeometry(radiusTop,radiusBottom,height,radialSegments,heightSegments,openEnded,thetaStart,thetaLength);
 
 ///|
 pub extern "js" fn newDodecahedron(
   radius : Float,
   detail : Int,
 ) -> BufferGeometry =
-  #|function(radius,detail) {
-  #|const geometry = new THREE.DodecahedronGeometry(radius,detail);
-  #|return geometry;
-  #|}
+  #|(radius,detail) =>new THREE.DodecahedronGeometry(radius,detail);
 
 ///|
 pub extern "js" fn newEdges(
   geometry : BufferGeometry,
   thresholdAngle : Int,
 ) -> BufferGeometry =
-  #|function(geometry,thresholdAngle) {
-  #|const geometry = new THREE.EdgesGeometry(geometry,thresholdAngle);
-  #|return geometry;
-  #|}
+  #|(geometry,thresholdAngle) =>new THREE.EdgesGeometry(geometry,thresholdAngle);
 
-///|TODO:
+///|
+///TODO:
 pub extern "js" fn newExtrude(
 // shapes : Array,
 // options : Object,
 ) -> BufferGeometry =
-  #|function(shapes,options) {
-  #|const geometry = new THREE.ExtrudeGeometry(shapes,options);
-  #|return geometry;
-  #|}
+  #|(shapes,options) =>new THREE.ExtrudeGeometry(shapes,options);
 
 ///|
 pub extern "js" fn newIcosahedron(
   radius : Float,
   detail : Int,
 ) -> BufferGeometry =
-  #|function(radius,detail) {
-  #|const geometry = new THREE.IcosahedronGeometry(radius,detail);
-  #|return geometry;
-  #|}
+  #|(radius,detail) =>new THREE.IcosahedronGeometry(radius,detail);
 
-///|TODO:
+///|
+///TODO:
 pub extern "js" fn newLathe(
   // points : Array[Int],
   segments : Int,
   phiStart : Float,
   phiLength : Float,
 ) -> BufferGeometry =
-  #|function(points,segments,phiStart,phiLength) {
-  #|const geometry = new THREE.LatheGeometry(points,segments,phiStart,phiLength);
-  #|return geometry;
-  #|}
+  #|(points,segments,phiStart,phiLength) =>new THREE.LatheGeometry(points,segments,phiStart,phiLength);
 
 ///|
 pub extern "js" fn newOctahedron(
   radius : Float,
   detail : Int,
 ) -> BufferGeometry =
-  #|function(radius,detail) {
-  #|const geometry = new THREE.OctahedronGeometry(radius,detail);
-  #|return geometry;
-  #|}
+  #|(radius,detail) =>new THREE.OctahedronGeometry(radius,detail);
 
 ///|
 pub extern "js" fn newPlane(
@@ -173,17 +142,12 @@ pub extern "js" fn newPlane(
   widthSegments : Int,
   heightSegments : Int,
 ) -> BufferGeometry =
-  #|function(width,height,widthSegments,heightSegments) {
-  #|const geometry = new THREE.PlaneGeometry(width,height,widthSegments,heightSegments);
-  #|return geometry;
-  #|}
+  #|(width,height,widthSegments,heightSegments) =>new THREE.PlaneGeometry(width,height,widthSegments,heightSegments);
 
-///|TODO:
+///|
+///TODO:
 pub extern "js" fn newPolyhedron() -> BufferGeometry =
-  #|function(radius,height,capSegments,radialSegments,heightSegments) {
-  #|const geometry = new THREE.PolyhedronGeometry(radius,height,capSegments,radialSegments,heightSegments);
-  #|return geometry;
-  #|}
+  #|(radius,height,capSegments,radialSegments,heightSegments) =>new THREE.PolyhedronGeometry(radius,height,capSegments,radialSegments,heightSegments);
 
 ///|
 pub extern "js" fn newRing(
@@ -194,17 +158,12 @@ pub extern "js" fn newRing(
   thetaStart : Float,
   thetaLength : Float,
 ) -> BufferGeometry =
-  #|function(innerRadius,outerRadius,thetaSegments,phiSegments,thetaStart,thetaLength) {
-  #|const geometry = new THREE.RingGeometry(innerRadius,outerRadius,thetaSegments,phiSegments,thetaStart,thetaLength);
-  #|return geometry;
-  #|}
+  #|(innerRadius,outerRadius,thetaSegments,phiSegments,thetaStart,thetaLength) =>new THREE.RingGeometry(innerRadius,outerRadius,thetaSegments,phiSegments,thetaStart,thetaLength);
 
-///|TODO:
+///|
+///TODO:
 pub extern "js" fn newShape() -> BufferGeometry =
-  #|function(radius,height,capSegments,radialSegments,heightSegments) {
-  #|const geometry = new THREE.ShapeGeometry(radius,height,capSegments,radialSegments,heightSegments);
-  #|return geometry;
-  #|}
+  #|(radius,height,capSegments,radialSegments,heightSegments) =>new THREE.ShapeGeometry(radius,height,capSegments,radialSegments,heightSegments);
 
 ///|
 pub extern "js" fn newSphere(
@@ -216,20 +175,14 @@ pub extern "js" fn newSphere(
   thetaStart : Float,
   thetaLength : Float,
 ) -> BufferGeometry =
-  #|function(radius,widthSegments,heightSegments,phiStart,phiLength,thetaStart,thetaLength) {
-  #|const geometry = new THREE.SphereGeometry(radius,widthSegments,heightSegments,phiStart,phiLength,thetaStart,thetaLength);
-  #|return geometry;
-  #|}
+  #|(radius,widthSegments,heightSegments,phiStart,phiLength,thetaStart,thetaLength) =>new THREE.SphereGeometry(radius,widthSegments,heightSegments,phiStart,phiLength,thetaStart,thetaLength);
 
 ///|
 pub extern "js" fn newTetrahedron(
   radius : Float,
   detail : Int,
 ) -> BufferGeometry =
-  #|function(radius,detail) {
-  #|const geometry = new THREE.TetrahedronGeometry(radius,detail);
-  #|return geometry;
-  #|}
+  #|(radius,detail) =>new THREE.TetrahedronGeometry(radius,detail);
 
 ///|
 pub extern "js" fn newTorus(
@@ -239,10 +192,7 @@ pub extern "js" fn newTorus(
   tubularSegments : Int,
   arc : Float,
 ) -> BufferGeometry =
-  #|function(radius,tube,radialSegments,tubularSegments,arc) {
-  #|const geometry = new THREE.TorusGeometry(radius,tube,radialSegments,tubularSegments,arc);
-  #|return geometry;
-  #|}
+  #|(radius,tube,radialSegments,tubularSegments,arc) =>new THREE.TorusGeometry(radius,tube,radialSegments,tubularSegments,arc);
 
 ///|
 pub extern "js" fn newTorusKnot(
@@ -253,12 +203,10 @@ pub extern "js" fn newTorusKnot(
   p : Int,
   q : Int,
 ) -> BufferGeometry =
-  #|function(radius,tube,tubularSegments,radialSegments,p,q) {
-  #|const geometry = new THREE.TorusKnotGeometry(radius,tube,tubularSegments,radialSegments,p,q);
-  #|return geometry;
-  #|}
+  #|(radius,tube,tubularSegments,radialSegments,p,q) =>new THREE.TorusKnotGeometry(radius,tube,tubularSegments,radialSegments,p,q);
 
-///|TODO:
+///|
+///TODO:
 pub extern "js" fn newTube(
   // path : Curve,
   tubularSegments : Int,
@@ -266,14 +214,8 @@ pub extern "js" fn newTube(
   radialSegments : Int,
   closed : Bool,
 ) -> BufferGeometry =
-  #|function(path,tubularSegments,radius,radialSegments,closed) {
-  #|const geometry = new THREE.TubeGeometry(path,tubularSegments,radius,radialSegments,closed);
-  #|return geometry;
-  #|}
+  #|(path,tubularSegments,radius,radialSegments,closed) =>new THREE.TubeGeometry(path,tubularSegments,radius,radialSegments,closed);
 
 ///|
 pub extern "js" fn newWireframe(geometry : BufferGeometry) -> BufferGeometry =
-  #|function(geometry) {
-  #|const geometry = new THREE.WireframeGeometry(geometry);
-  #|return geometry;
-  #|}
+  #|(geometry) =>new THREE.WireframeGeometry(geometry);
