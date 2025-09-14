@@ -1,5 +1,5 @@
 {
-  "name": "frenchpicnic/threejs",
+  "name": "fpic/threejs",
   "version": "0.0.1",
   "deps": {
     "rami3l/js-ffi": "0.4.0"
