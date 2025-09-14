@@ -3,7 +3,7 @@
 pub type Camera
 
 ///|
-impl IsObject for Camera
+pub impl IsObject for Camera
 
 ///|
 pub impl @js.Cast for Camera with into(value) {

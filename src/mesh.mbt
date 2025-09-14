@@ -3,7 +3,7 @@
 pub type Mesh
 
 ///|
-impl IsObject for Mesh
+pub impl IsObject for Mesh
 
 ///|
 pub impl @js.Cast for Mesh with into(value) {

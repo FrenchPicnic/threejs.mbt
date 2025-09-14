@@ -1,6 +1,6 @@
 {
-  "name": "fpic/threejs",
-  "version": "0.0.1",
+  "name": "FrenchPicnic/threejs",
+  "version": "0.0.2",
   "deps": {
     "rami3l/js-ffi": "0.4.0"
   },

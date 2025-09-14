@@ -1,5 +1,5 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "frenchpicnic/threejs"
+package "FrenchPicnic/threejs"
 
 import(
   "rami3l/js-ffi/js"
@@ -23,6 +23,8 @@ fn ffi_to_object(@js.Value) -> @js.Nullable[Object]
 fn ffi_to_scene(@js.Value) -> @js.Nullable[Scene]
 
 fn id_ffi(@js.Value) -> Int
+
+fn[A, B] js_identity(A) -> B
 
 fn lookat_ffi(@js.Value, Float, Float, Float) -> Unit
 
@@ -87,7 +89,14 @@ pub type BufferGeometry
 #external
 pub type Camera
 fn Camera::new(Float, Float, Float, Float) -> Self
+impl IsObject for Camera
 impl @js.Cast for Camera
+
+type DRACOLoader
+fn DRACOLoader::load(Self, String, (GLTF) -> Unit) -> Unit
+fn DRACOLoader::new() -> Self
+fn DRACOLoader::setDecoderPath(Self, String) -> Unit
+impl IsGLTFLoader for DRACOLoader
 
 type DirectionalLight
 fn DirectionalLight::new(String, Float) -> Self
@@ -101,6 +110,8 @@ fn GLTF::scene(Self) -> Scene
 type GLTFLoader
 fn GLTFLoader::load(Self, String, (GLTF) -> Unit) -> Unit
 fn GLTFLoader::new() -> Self
+fn GLTFLoader::setDRACOLoader(Self, DRACOLoader) -> Unit
+impl IsGLTFLoader for GLTFLoader
 
 pub(all) struct Geometry {
   bufferGeometry : BufferGeometry
@@ -118,6 +129,7 @@ impl @js.Cast for Material
 #external
 pub type Mesh
 fn Mesh::new(BufferGeometry) -> Object
+impl IsObject for Mesh
 impl @js.Cast for Mesh
 
 type MeshPhongMaterial
@@ -162,6 +174,7 @@ fn Render::setSize(Self, Int, Int, Bool) -> Unit
 pub type Scene
 fn Scene::background(Self, String) -> Unit
 fn Scene::new() -> Self
+impl IsObject for Scene
 impl @js.Cast for Scene
 
 // Type aliases

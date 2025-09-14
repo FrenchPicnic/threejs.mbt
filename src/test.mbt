@@ -71,7 +71,12 @@ fn gltf() -> Unit {
     scene.add(gltf.scene() |> js_identity)
     rederer.render(scene |> js_identity, camera)
   }
-  GLTFLoader::load(a, "/resource/model/aaa.glb", onload)
+  let darco = DRACOLoader::new()
+  darco.setDecoderPath(
+    "https://www.gstatic.com/draco/versioned/decoders/1.5.7/",
+  )
+  a.setDRACOLoader(darco)
+  GLTFLoader::load(a, "/resource/model/logo.glb", onload)
 }
 //  camera.lookAt(new THREE.Vector3(0, 0, 0));
 //     const rederer = frenchpicnic$threejs$$Render$new("#c");

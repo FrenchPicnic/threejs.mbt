@@ -3,7 +3,7 @@
 pub type Scene
 
 ///|
-impl IsObject for Scene
+pub impl IsObject for Scene
 
 ///|
 pub impl @js.Cast for Scene with into(value) {
