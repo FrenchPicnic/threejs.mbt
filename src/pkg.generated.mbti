@@ -1,0 +1,190 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "frenchpicnic/threejs"
+
+import(
+  "rami3l/js-ffi/js"
+)
+
+// Values
+fn add_ffi(@js.Value, @js.Value) -> Unit
+
+fn cast_shadow_ffi(@js.Value) -> Bool
+
+fn ffi_to_camera(@js.Value) -> @js.Nullable[Camera]
+
+fn ffi_to_directionalLight(@js.Value) -> @js.Nullable[DirectionalLight]
+
+fn ffi_to_material(@js.Value) -> @js.Nullable[Material]
+
+fn ffi_to_mesh(@js.Value) -> @js.Nullable[Mesh]
+
+fn ffi_to_object(@js.Value) -> @js.Nullable[Object]
+
+fn ffi_to_scene(@js.Value) -> @js.Nullable[Scene]
+
+fn id_ffi(@js.Value) -> Int
+
+fn lookat_ffi(@js.Value, Float, Float, Float) -> Unit
+
+fn meshBasicMaterial() -> Material
+
+fn newBox(Int, Int, Int, Int, Int, Int) -> BufferGeometry
+
+fn newCapsule(Float, Float, Int, Int, Int) -> BufferGeometry
+
+fn newCircle(Float, Int, Float, Float) -> BufferGeometry
+
+fn newCone(Float, Float, Int, Int, Bool, Float, Float) -> BufferGeometry
+
+fn newCylinder(Float, Float, Float, Int, Int, Bool, Float, Float) -> BufferGeometry
+
+fn newDodecahedron(Float, Int) -> BufferGeometry
+
+fn newEdges(BufferGeometry, Int) -> BufferGeometry
+
+fn newExtrude() -> BufferGeometry
+
+fn newIcosahedron(Float, Int) -> BufferGeometry
+
+fn newLathe(Int, Float, Float) -> BufferGeometry
+
+fn newOctahedron(Float, Int) -> BufferGeometry
+
+fn newPlane(Float, Float, Int, Int) -> BufferGeometry
+
+fn newPolyhedron() -> BufferGeometry
+
+fn newRing(Float, Float, Int, Int, Float, Float) -> BufferGeometry
+
+fn newShape() -> BufferGeometry
+
+fn newSphere(Float, Int, Int, Float, Float, Float, Float) -> BufferGeometry
+
+fn newTetrahedron(Float, Int) -> BufferGeometry
+
+fn newTorus(Float, Float, Int, Int, Float) -> BufferGeometry
+
+fn newTorusKnot(Float, Float, Int, Int, Int, Int) -> BufferGeometry
+
+fn newTube(Int, Float, Int, Bool) -> BufferGeometry
+
+fn newWireframe(BufferGeometry) -> BufferGeometry
+
+fn request_animation_frame((Double) -> Unit) -> Double
+
+fn set_position_ffi(@js.Value, Float, Float, Float) -> Unit
+
+fn set_rotation_ffi(@js.Value, Float, Float, Float, String) -> Unit
+
+fn simp_ffi() -> String
+
+// Errors
+
+// Types and methods
+#external
+pub type BufferGeometry
+
+#external
+pub type Camera
+fn Camera::new(Float, Float, Float, Float) -> Self
+impl @js.Cast for Camera
+
+type DirectionalLight
+fn DirectionalLight::new(String, Float) -> Self
+impl IsDirectionalLight for DirectionalLight
+impl IsObject for DirectionalLight
+impl @js.Cast for DirectionalLight
+
+type GLTF
+fn GLTF::scene(Self) -> Scene
+
+type GLTFLoader
+fn GLTFLoader::load(Self, String, (GLTF) -> Unit) -> Unit
+fn GLTFLoader::new() -> Self
+
+pub(all) struct Geometry {
+  bufferGeometry : BufferGeometry
+  primitive : Primitive
+}
+
+type Light
+
+type Loader
+
+type Material
+impl IsMaterial for Material
+impl @js.Cast for Material
+
+#external
+pub type Mesh
+fn Mesh::new(BufferGeometry) -> Object
+impl @js.Cast for Mesh
+
+type MeshPhongMaterial
+
+type Object
+impl IsObject for Object
+impl @js.Cast for Object
+
+pub(all) enum Primitive {
+  BoxGeometry
+  CapsuleGeometry
+  CircleGeometry
+  ConeGeometry
+  CylinderGeometry
+  DodecahedronGeometry
+  EdgesGeometry
+  ExtrudeGeometry
+  IcosahedronGeometry
+  LatheGeometry
+  OctahedronGeometry
+  ParametricGeometry
+  PlaneGeometry
+  PolyhedronGeometry
+  RingGeometry
+  ShapeGeometry
+  SphereGeometry
+  TetrahedronGeometry
+  TorusGeometry
+  TorusKnotGeometry
+  TubeGeometry
+  WireframeGeometry
+}
+
+#external
+pub type Render
+fn Render::newWebGL(String) -> Self
+fn Render::render(Self, @js.Value, Camera) -> Unit
+fn Render::setPixelRatio(Self, Float) -> Unit
+fn Render::setSize(Self, Int, Int, Bool) -> Unit
+
+#external
+pub type Scene
+fn Scene::background(Self, String) -> Unit
+fn Scene::new() -> Self
+impl @js.Cast for Scene
+
+// Type aliases
+
+// Traits
+pub trait IsDirectionalLight : IsObject {
+}
+
+pub trait IsGLTFLoader {
+}
+
+pub trait IsMaterial : @js.Cast {
+}
+
+pub trait IsObject : @js.Cast {
+  add(Self, @js.Value) -> Unit
+  cast_shadow(Self) -> Bool
+  id(Self) -> Int
+  set_position(Self, Float, Float, Float) -> Unit
+  set_rotation(Self, Float, Float, Float, String) -> Unit
+  lookat(Self, Float, Float, Float) -> Unit
+}
+
+pub trait IsWebGLRenderer {
+}
+

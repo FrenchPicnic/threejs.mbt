@@ -20,4 +20,8 @@ pub extern "js" fn Scene::new() -> Scene =
   #|() => new THREE.Scene();
 
 ///|
+pub extern "js" fn Scene::background(self : Scene, color : String) -> Unit =
+  #|(self,color) => self.background = new THREE.Color(color);
+
+///|
 pub extern "js" fn ffi_to_scene(x : @js.Value) -> @js.Nullable[Scene] = "(x) => x instanceof THREE.Scene ? x : null"

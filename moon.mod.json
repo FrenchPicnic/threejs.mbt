@@ -1,13 +1,17 @@
 {
   "name": "frenchpicnic/threejs",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "deps": {
     "rami3l/js-ffi": "0.4.0"
   },
   "readme": "README.md",
   "repository": "",
   "license": "Apache-2.0",
-  "keywords": [],
+  "keywords": [
+    "js",
+    "js-ffi",
+    "threejs"
+  ],
   "description": "",
   "source": "src",
   "preferred-target": "js"
