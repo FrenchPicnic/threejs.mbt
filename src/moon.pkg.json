@@ -1,4 +1,7 @@
 {
   "is-main": true,
-  "import": ["rami3l/js-ffi/js"],
+  "import": [
+    "rami3l/js-ffi/js",
+    "FrenchPicnic/threejs/math"
+  ],
 }

@@ -65,8 +65,8 @@ fn gltf() -> Unit {
   camera.lookat(0, 0, 0)
   let rederer = Render::newWebGL("#c")
   rederer.render(scene |> js_identity, camera)
-  rederer.setPixelRatio(1)
-  rederer.setSize(800, 600, false)
+  rederer.setPixelRatio(@math.devicePixelRatio())
+  rederer.setSize(@math.innerWidth(), @math.innerHeight(), false)
   let onload : (GLTF) -> Unit = fn(gltf : GLTF) {
     scene.add(gltf.scene() |> js_identity)
     rederer.render(scene |> js_identity, camera)
