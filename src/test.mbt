@@ -56,19 +56,26 @@ fn rolling_cube() -> Unit {
 fn gltf() -> Unit {
   let a = GLTFLoader::new()
   let light = DirectionalLight::new("white", 12.5)
-  light.set_position(5, 5, 5)
+  light.set_position(-5, -2, 1)
   let scene = Scene::new()
   scene.background("#a0a0a0")
   scene.add(light |> js_identity)
-  let camera = Camera::new(15, 2, 1.1, 70)
-  camera.set_position(3, 0, 2)
-  camera.lookat(0, 0, 0)
+  let camera = Camera::new(55, 2, 1.1, 70)
+  camera.set_position(-3.6, 0.5, 0.4)
+  camera.lookat(10, 0, 0)
+  camera.set_rotation(
+    -1.0225770885688956, -1.548136710346424, -1.022462880761241, "XYZ",
+  )
+  let control = OrbitControl::new(camera, "#c")
+  control.update() |> ignore
   let rederer = Render::newWebGL("#c")
   rederer.render(scene |> js_identity, camera)
   rederer.setPixelRatio(@math.devicePixelRatio())
   rederer.setSize(@math.innerWidth(), @math.innerHeight(), false)
   let onload : (GLTF) -> Unit = fn(gltf : GLTF) {
-    scene.add(gltf.scene() |> js_identity)
+    let a = gltf
+    a.scene().set_position(-1, -0.5, -1)
+    scene.add(a.scene() |> js_identity)
     rederer.render(scene |> js_identity, camera)
   }
   let darco = DRACOLoader::new()
@@ -77,6 +84,17 @@ fn gltf() -> Unit {
   )
   a.setDRACOLoader(darco)
   GLTFLoader::load(a, "/resource/model/logo.glb", onload)
+  let mut i = 0.0
+  fn update(time : Double) {
+    i = i + time
+    rederer.render(scene |> js_identity, camera)
+    ignore(request_animation_frame(update))
+    if i % 500 == 0 {
+
+    }
+  }
+
+  ignore(request_animation_frame(update))
 }
 //  camera.lookAt(new THREE.Vector3(0, 0, 0));
 //     const rederer = frenchpicnic$threejs$$Render$new("#c");

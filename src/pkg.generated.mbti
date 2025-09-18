@@ -20,6 +20,8 @@ fn ffi_to_mesh(@js.Value) -> @js.Nullable[Mesh]
 
 fn ffi_to_object(@js.Value) -> @js.Nullable[Object]
 
+fn ffi_to_orbit_control(@js.Value) -> @js.Nullable[OrbitControl]
+
 fn ffi_to_scene(@js.Value) -> @js.Nullable[Scene]
 
 fn id_ffi(@js.Value) -> Int
@@ -71,6 +73,8 @@ fn newTorusKnot(Float, Float, Int, Int, Int, Int) -> BufferGeometry
 fn newTube(Int, Float, Int, Bool) -> BufferGeometry
 
 fn newWireframe(BufferGeometry) -> BufferGeometry
+
+fn orbit_update_ffi(@js.Value) -> Bool
 
 fn request_animation_frame((Double) -> Unit) -> Double
 
@@ -138,6 +142,12 @@ type Object
 impl IsObject for Object
 impl @js.Cast for Object
 
+type OrbitControl
+fn OrbitControl::new(Camera, String) -> Self
+impl IsControl for OrbitControl
+impl IsOrbitControls for OrbitControl
+impl @js.Cast for OrbitControl
+
 pub(all) enum Primitive {
   BoxGeometry
   CapsuleGeometry
@@ -180,6 +190,9 @@ impl @js.Cast for Scene
 // Type aliases
 
 // Traits
+pub trait IsControl : @js.Cast {
+}
+
 pub trait IsDirectionalLight : IsObject {
 }
 
@@ -196,6 +209,10 @@ pub trait IsObject : @js.Cast {
   set_position(Self, Float, Float, Float) -> Unit
   set_rotation(Self, Float, Float, Float, String) -> Unit
   lookat(Self, Float, Float, Float) -> Unit
+}
+
+pub trait IsOrbitControls : IsControl {
+  update(Self) -> Bool
 }
 
 pub trait IsWebGLRenderer {

@@ -2,6 +2,11 @@
 package "FrenchPicnic/threejs/math"
 
 // Values
+fn devicePixelRatio() -> Float
+
+fn innerHeight() -> Int
+
+fn innerWidth() -> Int
 
 // Errors
 
