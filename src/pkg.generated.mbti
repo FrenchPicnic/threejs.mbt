@@ -24,6 +24,8 @@ fn ffi_to_orbit_control(@js.Value) -> @js.Nullable[OrbitControl]
 
 fn ffi_to_scene(@js.Value) -> @js.Nullable[Scene]
 
+fn ffi_to_vector3(@js.Value) -> @js.Nullable[Vector3]
+
 fn id_ffi(@js.Value) -> Int
 
 fn[A, B] js_identity(A) -> B
@@ -84,6 +86,8 @@ fn set_rotation_ffi(@js.Value, Float, Float, Float, String) -> Unit
 
 fn simp_ffi() -> String
 
+fn vector_x_ffi(@js.Value) -> Float
+
 // Errors
 
 // Types and methods
@@ -92,7 +96,15 @@ pub type BufferGeometry
 
 #external
 pub type Camera
+fn Camera::add(Self, @js.Value) -> Unit // from trait `IsObject`
+fn Camera::cast_shadow(Self) -> Bool // from trait `IsObject`
+fn Camera::from(Self) -> @js.Value // from trait `@js.Cast`
+fn Camera::id(Self) -> Int // from trait `IsObject`
+fn Camera::into(@js.Value) -> Self? // from trait `@js.Cast`
+fn Camera::lookat(Self, Float, Float, Float) -> Unit // from trait `IsObject`
 fn Camera::new(Float, Float, Float, Float) -> Self
+fn Camera::set_position(Self, Float, Float, Float) -> Unit // from trait `IsObject`
+fn Camera::set_rotation(Self, Float, Float, Float, String) -> Unit // from trait `IsObject`
 impl IsObject for Camera
 impl @js.Cast for Camera
 
@@ -103,10 +115,20 @@ fn DRACOLoader::setDecoderPath(Self, String) -> Unit
 impl IsGLTFLoader for DRACOLoader
 
 type DirectionalLight
+fn DirectionalLight::add(Self, @js.Value) -> Unit // from trait `IsObject`
+fn DirectionalLight::cast_shadow(Self) -> Bool // from trait `IsObject`
+fn DirectionalLight::from(Self) -> @js.Value // from trait `@js.Cast`
+fn DirectionalLight::id(Self) -> Int // from trait `IsObject`
+fn DirectionalLight::into(@js.Value) -> Self? // from trait `@js.Cast`
+fn DirectionalLight::lookat(Self, Float, Float, Float) -> Unit // from trait `IsObject`
 fn DirectionalLight::new(String, Float) -> Self
+fn DirectionalLight::set_position(Self, Float, Float, Float) -> Unit // from trait `IsObject`
+fn DirectionalLight::set_rotation(Self, Float, Float, Float, String) -> Unit // from trait `IsObject`
 impl IsDirectionalLight for DirectionalLight
 impl IsObject for DirectionalLight
 impl @js.Cast for DirectionalLight
+
+type Eluer
 
 type GLTF
 fn GLTF::scene(Self) -> Scene
@@ -127,23 +149,44 @@ type Light
 type Loader
 
 type Material
+fn Material::from(Self) -> @js.Value // from trait `@js.Cast`
+fn Material::into(@js.Value) -> Self? // from trait `@js.Cast`
 impl IsMaterial for Material
 impl @js.Cast for Material
 
 #external
 pub type Mesh
+fn Mesh::add(Self, @js.Value) -> Unit // from trait `IsObject`
+fn Mesh::cast_shadow(Self) -> Bool // from trait `IsObject`
+fn Mesh::from(Self) -> @js.Value // from trait `@js.Cast`
+fn Mesh::id(Self) -> Int // from trait `IsObject`
+fn Mesh::into(@js.Value) -> Self? // from trait `@js.Cast`
+fn Mesh::lookat(Self, Float, Float, Float) -> Unit // from trait `IsObject`
 fn Mesh::new(BufferGeometry) -> Object
+fn Mesh::set_position(Self, Float, Float, Float) -> Unit // from trait `IsObject`
+fn Mesh::set_rotation(Self, Float, Float, Float, String) -> Unit // from trait `IsObject`
 impl IsObject for Mesh
 impl @js.Cast for Mesh
 
 type MeshPhongMaterial
 
 type Object
+fn Object::add(Self, @js.Value) -> Unit // from trait `IsObject`
+fn Object::cast_shadow(Self) -> Bool // from trait `IsObject`
+fn Object::from(Self) -> @js.Value // from trait `@js.Cast`
+fn Object::id(Self) -> Int // from trait `IsObject`
+fn Object::into(@js.Value) -> Self? // from trait `@js.Cast`
+fn Object::lookat(Self, Float, Float, Float) -> Unit // from trait `IsObject`
+fn Object::set_position(Self, Float, Float, Float) -> Unit // from trait `IsObject`
+fn Object::set_rotation(Self, Float, Float, Float, String) -> Unit // from trait `IsObject`
 impl IsObject for Object
 impl @js.Cast for Object
 
 type OrbitControl
+fn OrbitControl::from(Self) -> @js.Value // from trait `@js.Cast`
+fn OrbitControl::into(@js.Value) -> Self? // from trait `@js.Cast`
 fn OrbitControl::new(Camera, String) -> Self
+fn OrbitControl::update(Self) -> Bool // from trait `IsOrbitControls`
 impl IsControl for OrbitControl
 impl IsOrbitControls for OrbitControl
 impl @js.Cast for OrbitControl
@@ -182,10 +225,25 @@ fn Render::setSize(Self, Int, Int, Bool) -> Unit
 
 #external
 pub type Scene
+fn Scene::add(Self, @js.Value) -> Unit // from trait `IsObject`
 fn Scene::background(Self, String) -> Unit
+fn Scene::cast_shadow(Self) -> Bool // from trait `IsObject`
+fn Scene::from(Self) -> @js.Value // from trait `@js.Cast`
+fn Scene::id(Self) -> Int // from trait `IsObject`
+fn Scene::into(@js.Value) -> Self? // from trait `@js.Cast`
+fn Scene::lookat(Self, Float, Float, Float) -> Unit // from trait `IsObject`
 fn Scene::new() -> Self
+fn Scene::set_position(Self, Float, Float, Float) -> Unit // from trait `IsObject`
+fn Scene::set_rotation(Self, Float, Float, Float, String) -> Unit // from trait `IsObject`
 impl IsObject for Scene
 impl @js.Cast for Scene
+
+type Vector3
+fn Vector3::from(Self) -> @js.Value // from trait `@js.Cast`
+fn Vector3::into(@js.Value) -> Self? // from trait `@js.Cast`
+fn Vector3::x(Self) -> Float // from trait `IsVector3`
+impl IsVector3 for Vector3
+impl @js.Cast for Vector3
 
 // Type aliases
 
@@ -213,6 +271,10 @@ pub trait IsObject : @js.Cast {
 
 pub trait IsOrbitControls : IsControl {
   update(Self) -> Bool
+}
+
+pub trait IsVector3 : @js.Cast {
+  x(Self) -> Float
 }
 
 pub trait IsWebGLRenderer {

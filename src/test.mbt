@@ -84,14 +84,9 @@ fn gltf() -> Unit {
   )
   a.setDRACOLoader(darco)
   GLTFLoader::load(a, "/resource/model/logo.glb", onload)
-  let mut i = 0.0
   fn update(time : Double) {
-    i = i + time
     rederer.render(scene |> js_identity, camera)
     ignore(request_animation_frame(update))
-    if i % 500 == 0 {
-
-    }
   }
 
   ignore(request_animation_frame(update))
