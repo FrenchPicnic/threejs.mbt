@@ -8,6 +8,7 @@ pub impl IsObject for Object
 ///|
 pub trait IsObject: @js.Cast {
   add(Self, @js.Value) -> Unit = _
+  remove(Self, @js.Value) -> Unit = _
   cast_shadow(Self) -> Bool = _
   id(Self) -> Int = _
   set_position(Self, Float, Float, Float) -> Unit = _
@@ -65,6 +66,11 @@ impl IsObject with lookat(self, x : Float, y : Float, z : Float) {
 }
 
 ///|
+impl IsObject with remove(self, child : @js.Value) {
+  remove_ffi(self |> js_identity, child)
+}
+
+///|
 pub extern "js" fn cast_shadow_ffi(obj : @js.Value) -> Bool =
   #| (obj) => obj.castShadow()
 
@@ -75,6 +81,10 @@ pub extern "js" fn id_ffi(obj : @js.Value) -> Int =
 ///|
 pub extern "js" fn add_ffi(parent : @js.Value, child : @js.Value) -> Unit =
   #|(parent, child) => parent.add( child );
+
+///|
+pub extern "js" fn remove_ffi(parent : @js.Value, child : @js.Value) -> Unit =
+  #|(parent, child) => parent.remove( child );
 
 ///|
 pub extern "js" fn set_position_ffi(
