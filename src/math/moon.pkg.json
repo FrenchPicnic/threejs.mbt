@@ -1,3 +1,5 @@
 {
-  "import": ["rami3l/js-ffi/js"],
+  "import": [
+    "rami3l/js-ffi/js"
+  ]
 }

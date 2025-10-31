@@ -1,9 +1,5 @@
 ///|
 #external
-type Light
-
-///|
-#external
 type DirectionalLight
 
 ///|
@@ -13,7 +9,7 @@ pub impl IsDirectionalLight for DirectionalLight
 pub impl IsObject for DirectionalLight
 
 ///|
-pub trait IsDirectionalLight: IsObject {}
+pub trait IsDirectionalLight: IsLight {}
 
 ///|
 pub extern "js" fn DirectionalLight::new(
