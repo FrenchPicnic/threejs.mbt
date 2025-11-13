@@ -40,8 +40,8 @@
         window.GLTFLoader = GLTFLoader;
         window.DRACOLoader = DRACOLoader;
 
-        // 动态导入main.js并执行
-        const mainModule = await import('game');
+        // 导入main.js并执行
+        const mainModule = import('game');
     </script>
 </head>
 
