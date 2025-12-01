@@ -10,7 +10,7 @@ fn main {
   scene.add(light |> @three.js_identity)
 
   //
-  let camera = @three.Camera::new(55, 2, 1.1, 70)
+  let camera = @three.PerspectiveCamera::new(55, 2, 1.1, 70)
   camera.set_position(-3.6, 0.5, 0.4)
   camera.lookat(10, 0, 0)
   camera.set_rotation(
