@@ -32,7 +32,7 @@ fn main {
   let onload : (@three.GLTF) -> Unit = fn(gltf : @three.GLTF) {
     let a = gltf
     a.scene().set_position(0, 0, 0)
-    scene.add(a.scene() |> @three.js_identity)
+    let _ = scene.add(a.scene() |> @three.js_identity)
     rederer.render(scene |> @three.js_identity, camera)
   }
 
