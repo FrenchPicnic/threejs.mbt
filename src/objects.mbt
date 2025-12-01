@@ -7,6 +7,7 @@ pub impl IsObject for Object
 
 ///|
 pub trait IsObject: @js.Cast {
+  // TODO:
   // // animations(Self) -> Array[Animation] = _
   cast_shadow(Self) -> Bool = _
   // // children(Self) -> Array[Object] = _

@@ -16,6 +16,7 @@ pub trait IsVector3: @js.Cast {
   add_vectors(Self, Vector3, Vector3) -> Vector3 = _
   angle_to(Self, Vector3) -> Float = _
   apply_axis_angle(Self, Vector3, Float) -> Unit = _
+  // TODO:
   // apply_euler(Self, Euler) -> Unit = _
   // apply_matrix3(Self, Matrix3) -> Unit = _
   // apply_matrix4(Self, Matrix4) -> Unit = _
