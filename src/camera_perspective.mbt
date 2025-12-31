@@ -6,6 +6,9 @@ type PerspectiveCamera
 pub impl IsPerspectiveCamera for PerspectiveCamera
 
 ///|
+pub impl IsCamera for PerspectiveCamera
+
+///|
 pub impl IsObject for PerspectiveCamera
 
 ///|
