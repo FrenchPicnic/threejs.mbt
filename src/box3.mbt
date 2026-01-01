@@ -44,7 +44,7 @@ pub trait IsBox3: @js.Cast {
 
 ///|
 pub impl @js.Cast for Box3 with into(value) {
-  value |> ffi_to_Box3 |> _.to_option()
+  value |> ffi_to_box3 |> _.to_option()
 }
 
 ///|
@@ -211,7 +211,7 @@ pub extern "js" fn box3_clamp_point_ffi(
 pub extern "js" fn Box3::new(min : Vector3, max : Vector3) -> Box3 = "(min, max) => new THREE.Box3(min, max)"
 
 ///|
-pub extern "js" fn ffi_to_Box3(x : @js.Value) -> @js.Nullable[Box3] = "(x) => x instanceof THREE.Box3 ? x : null"
+pub extern "js" fn ffi_to_box3(x : @js.Value) -> @js.Nullable[Box3] = "(x) => x instanceof THREE.Box3 ? x : null"
 
 ///|
 pub extern "js" fn box3_expand_by_point_ffi(
