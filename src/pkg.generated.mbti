@@ -6,138 +6,487 @@ import(
 )
 
 // Values
-fn add_ffi(@js.Value, @js.Value) -> Unit
+pub fn box2_clamp_point_ffi(@js.Value, @js.Value, @js.Value) -> Vector2
 
-fn cast_shadow_ffi(@js.Value) -> Bool
+pub fn box2_clone_ffi(@js.Value) -> Box2
 
-fn ffi_to_camera(@js.Value) -> @js.Nullable[Camera]
+pub fn box2_contains_box_ffi(@js.Value, @js.Value) -> Bool
 
-fn ffi_to_directionalLight(@js.Value) -> @js.Nullable[DirectionalLight]
+pub fn box2_contains_point_ffi(@js.Value, @js.Value) -> Bool
 
-fn ffi_to_material(@js.Value) -> @js.Nullable[Material]
+pub fn box2_copy_ffi(@js.Value, @js.Value) -> Unit
 
-fn ffi_to_mesh(@js.Value) -> @js.Nullable[Mesh]
+pub fn box2_distance_to_point_ffi(@js.Value, @js.Value) -> Float
 
-fn ffi_to_object(@js.Value) -> @js.Nullable[Object]
+pub fn box2_equals_ffi(@js.Value, @js.Value) -> Bool
 
-fn ffi_to_orbit_control(@js.Value) -> @js.Nullable[OrbitControl]
+pub fn box2_expand_by_point_ffi(@js.Value, @js.Value) -> Unit
 
-fn ffi_to_scene(@js.Value) -> @js.Nullable[Scene]
+pub fn box2_expand_by_scalar_ffi(@js.Value, Float) -> Unit
 
-fn ffi_to_vector3(@js.Value) -> @js.Nullable[Vector3]
+pub fn box2_expand_by_vector_ffi(@js.Value, @js.Value) -> Unit
 
-fn id_ffi(@js.Value) -> Int
+pub fn box2_get_center_ffi(@js.Value, @js.Value) -> Vector2
 
-fn[A, B] js_identity(A) -> B
+pub fn box2_get_parameter_ffi(@js.Value, @js.Value, @js.Value) -> Vector2
 
-fn lookat_ffi(@js.Value, Float, Float, Float) -> Unit
+pub fn box2_get_size_ffi(@js.Value, @js.Value) -> Vector2
 
-fn meshBasicMaterial() -> Material
+pub fn box2_intersect_ffi(@js.Value, @js.Value) -> Unit
 
-fn newBox(Int, Int, Int, Int, Int, Int) -> BufferGeometry
+pub fn box2_intersects_box_ffi(@js.Value, @js.Value) -> Bool
 
-fn newCapsule(Float, Float, Int, Int, Int) -> BufferGeometry
+pub fn box2_is_empty_ffi(@js.Value) -> Bool
 
-fn newCircle(Float, Int, Float, Float) -> BufferGeometry
+pub fn box2_make_empty_ffi(@js.Value) -> Unit
 
-fn newCone(Float, Float, Int, Int, Bool, Float, Float) -> BufferGeometry
+pub fn box2_set_ffi(@js.Value, @js.Value, @js.Value) -> Unit
 
-fn newCylinder(Float, Float, Float, Int, Int, Bool, Float, Float) -> BufferGeometry
+pub fn box2_set_from_center_and_size_ffi(@js.Value, @js.Value, @js.Value) -> Unit
 
-fn newDodecahedron(Float, Int) -> BufferGeometry
+pub fn box2_translate_ffi(@js.Value, @js.Value) -> Unit
 
-fn newEdges(BufferGeometry, Int) -> BufferGeometry
+pub fn box2_union_ffi(@js.Value, @js.Value) -> Unit
 
-fn newExtrude() -> BufferGeometry
+pub fn camera_get_world_direction_ffi(@js.Value, @js.Value) -> Vector3
 
-fn newIcosahedron(Float, Int) -> BufferGeometry
+pub fn cube_update_coordinate_system_ffi(@js.Value) -> Unit
 
-fn newLathe(Int, Float, Float) -> BufferGeometry
+pub fn decay_ffi(@js.Value) -> Float
 
-fn newOctahedron(Float, Int) -> BufferGeometry
+pub fn distance_ffi(@js.Value) -> Float
 
-fn newPlane(Float, Float, Int, Int) -> BufferGeometry
+pub fn eluer_order_ffi(@js.Value) -> String
 
-fn newPolyhedron() -> BufferGeometry
+pub fn eluer_set_ffi(@js.Value, Float, Float, Float, String) -> Unit
 
-fn newRing(Float, Float, Int, Int, Float, Float) -> BufferGeometry
+pub fn eluer_x_ffi(@js.Value) -> Float
 
-fn newShape() -> BufferGeometry
+pub fn eluer_y_ffi(@js.Value) -> Float
 
-fn newSphere(Float, Int, Int, Float, Float, Float, Float) -> BufferGeometry
+pub fn eluer_z_ffi(@js.Value) -> Float
 
-fn newTetrahedron(Float, Int) -> BufferGeometry
+pub fn ffi_to_Light(@js.Value) -> @js.Nullable[Light]
 
-fn newTorus(Float, Float, Int, Int, Float) -> BufferGeometry
+pub fn ffi_to_box2(@js.Value) -> @js.Nullable[Box2]
 
-fn newTorusKnot(Float, Float, Int, Int, Int, Int) -> BufferGeometry
+pub fn ffi_to_camera(@js.Value) -> @js.Nullable[Camera]
 
-fn newTube(Int, Float, Int, Bool) -> BufferGeometry
+pub fn ffi_to_cube_camera(@js.Value) -> @js.Nullable[CubeCamera]
 
-fn newWireframe(BufferGeometry) -> BufferGeometry
+pub fn ffi_to_directionalLight(@js.Value) -> @js.Nullable[DirectionalLight]
 
-fn orbit_update_ffi(@js.Value) -> Bool
+pub fn ffi_to_eluer(@js.Value) -> @js.Nullable[Eluer]
 
-fn request_animation_frame((Double) -> Unit) -> Double
+pub fn ffi_to_material(@js.Value) -> @js.Nullable[Material]
 
-fn set_position_ffi(@js.Value, Float, Float, Float) -> Unit
+pub fn ffi_to_mesh(@js.Value) -> @js.Nullable[Mesh]
 
-fn set_rotation_ffi(@js.Value, Float, Float, Float, String) -> Unit
+pub fn ffi_to_object(@js.Value) -> @js.Nullable[Object]
 
-fn simp_ffi() -> String
+pub fn ffi_to_orbit_control(@js.Value) -> @js.Nullable[OrbitControl]
 
-fn vector_x_ffi(@js.Value) -> Float
+pub fn ffi_to_orthographic_camera(@js.Value) -> @js.Nullable[OrthographicCamera]
+
+pub fn ffi_to_perspective_camera(@js.Value) -> @js.Nullable[PerspectiveCamera]
+
+pub fn ffi_to_pointLight(@js.Value) -> @js.Nullable[PointLight]
+
+pub fn ffi_to_scene(@js.Value) -> @js.Nullable[Scene]
+
+pub fn ffi_to_vector2(@js.Value) -> @js.Nullable[Vector2]
+
+pub fn ffi_to_vector3(@js.Value) -> @js.Nullable[Vector3]
+
+pub fn[A, B] js_identity(A) -> B
+
+pub fn meshBasicMaterial() -> Material
+
+pub fn newBox(Int, Int, Int, Int, Int, Int) -> BufferGeometry
+
+pub fn newCapsule(Float, Float, Int, Int, Int) -> BufferGeometry
+
+pub fn newCircle(Float, Int, Float, Float) -> BufferGeometry
+
+pub fn newCone(Float, Float, Int, Int, Bool, Float, Float) -> BufferGeometry
+
+pub fn newCylinder(Float, Float, Float, Int, Int, Bool, Float, Float) -> BufferGeometry
+
+pub fn newDodecahedron(Float, Int) -> BufferGeometry
+
+pub fn newEdges(BufferGeometry, Int) -> BufferGeometry
+
+pub fn newExtrude() -> BufferGeometry
+
+pub fn newIcosahedron(Float, Int) -> BufferGeometry
+
+pub fn newLathe(Int, Float, Float) -> BufferGeometry
+
+pub fn newOctahedron(Float, Int) -> BufferGeometry
+
+pub fn newPlane(Float, Float, Int, Int) -> BufferGeometry
+
+pub fn newPolyhedron() -> BufferGeometry
+
+pub fn newRing(Float, Float, Int, Int, Float, Float) -> BufferGeometry
+
+pub fn newShape() -> BufferGeometry
+
+pub fn newSphere(Float, Int, Int, Float, Float, Float, Float) -> BufferGeometry
+
+pub fn newTetrahedron(Float, Int) -> BufferGeometry
+
+pub fn newTorus(Float, Float, Int, Int, Float) -> BufferGeometry
+
+pub fn newTorusKnot(Float, Float, Int, Int, Int, Int) -> BufferGeometry
+
+pub fn newTube(Int, Float, Int, Bool) -> BufferGeometry
+
+pub fn newWireframe(BufferGeometry) -> BufferGeometry
+
+pub fn object_add_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn object_attach_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn object_cast_shadow_ffi(@js.Value) -> Bool
+
+pub fn object_clear_ffi(@js.Value) -> Unit
+
+pub fn object_clone_ffi(@js.Value, Bool) -> Object
+
+pub fn object_copy_ffi(@js.Value, @js.Value, Bool) -> Object
+
+pub fn object_frustum_culled_ffi(@js.Value) -> Bool
+
+pub fn object_get_world_direction_ffi(@js.Value, @js.Value) -> Vector3
+
+pub fn object_get_world_position_ffi(@js.Value, @js.Value) -> Vector3
+
+pub fn object_get_world_scale_ffi(@js.Value, @js.Value) -> Vector3
+
+pub fn object_id_ffi(@js.Value) -> Int
+
+pub fn object_is_object3d_ffi(@js.Value) -> Bool
+
+pub fn object_local_to_world_ffi(@js.Value, @js.Value) -> Vector3
+
+pub fn object_lookat_ffi(@js.Value, Float, Float, Float) -> Unit
+
+pub fn object_matrix_auto_update_ffi(@js.Value) -> Bool
+
+pub fn object_remove_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn object_remove_from_parent_ffi(@js.Value) -> Unit
+
+pub fn object_rotate_on_axis_ffi(@js.Value, @js.Value, Float) -> Unit
+
+pub fn object_rotate_on_world_axis_ffi(@js.Value, @js.Value, Float) -> Unit
+
+pub fn object_rotate_x_ffi(@js.Value, Float) -> Unit
+
+pub fn object_rotate_y_ffi(@js.Value, Float) -> Unit
+
+pub fn object_rotate_z_ffi(@js.Value, Float) -> Unit
+
+pub fn object_set_position_ffi(@js.Value, Float, Float, Float) -> Unit
+
+pub fn object_set_rotation_ffi(@js.Value, Float, Float, Float, String) -> Unit
+
+pub fn object_set_rotation_from_axis_angle_ffi(@js.Value, @js.Value, Float) -> Unit
+
+pub fn object_translate_x_ffi(@js.Value, Float) -> Unit
+
+pub fn object_translate_y_ffi(@js.Value, Float) -> Unit
+
+pub fn object_translate_z_ffi(@js.Value, Float) -> Unit
+
+pub fn object_transltae_on_axis_ffi(@js.Value, @js.Value, Float) -> Unit
+
+pub fn object_update_matrix_ffi(@js.Value) -> Unit
+
+pub fn object_world_to_local_ffi(@js.Value, Vector3) -> Vector3
+
+pub fn orbit_update_ffi(@js.Value) -> Bool
+
+pub fn orthographic_clear_view_offset_ffi(@js.Value) -> Unit
+
+pub fn orthographic_set_view_offset_ffi(@js.Value, Float, Float, Float, Float, Float, Float) -> Unit
+
+pub fn orthographic_update_projection_matrix_ffi(@js.Value) -> Unit
+
+pub fn perspective_clear_view_offset_ffi(@js.Value) -> Unit
+
+pub fn perspective_get_effective_fov_ffi(@js.Value) -> Float
+
+pub fn perspective_get_film_height_ffi(@js.Value) -> Float
+
+pub fn perspective_get_film_width_ffi(@js.Value) -> Float
+
+pub fn perspective_get_focal_length_ffi(@js.Value) -> Float
+
+pub fn perspective_set_focal_length_ffi(@js.Value, Float) -> Unit
+
+pub fn perspective_set_view_offset_ffi(@js.Value, Float, Float, Float, Float, Float, Float) -> Unit
+
+pub fn perspective_update_projection_matrix_ffi(@js.Value) -> Unit
+
+pub fn request_animation_frame((Double) -> Unit) -> Double
+
+pub fn vector2_add_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector2_add_scalar_ffi(@js.Value, Float) -> Unit
+
+pub fn vector2_add_scalar_vector_ffi(@js.Value, @js.Value, Float) -> Unit
+
+pub fn vector2_add_vectors_ffi(@js.Value, @js.Value, @js.Value) -> Unit
+
+pub fn vector2_angle_ffi(@js.Value) -> Float
+
+pub fn vector2_angle_to_ffi(@js.Value, @js.Value) -> Float
+
+pub fn vector2_ceil_ffi(@js.Value) -> Unit
+
+pub fn vector2_clamp_ffi(@js.Value, @js.Value, @js.Value) -> Unit
+
+pub fn vector2_clamp_length_ffi(@js.Value, Float, Float) -> Unit
+
+pub fn vector2_clamp_scalar_ffi(@js.Value, Float, Float) -> Unit
+
+pub fn vector2_clone_ffi(@js.Value) -> Vector2
+
+pub fn vector2_copy_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector2_cross_ffi(@js.Value, @js.Value) -> Float
+
+pub fn vector2_distance_to_ffi(@js.Value, @js.Value) -> Float
+
+pub fn vector2_distance_to_squared_ffi(@js.Value, @js.Value) -> Float
+
+pub fn vector2_divide_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector2_divide_scalar_ffi(@js.Value, Float) -> Unit
+
+pub fn vector2_dot_ffi(@js.Value, Float) -> Float
+
+pub fn vector2_equals_ffi(@js.Value, Vector2) -> Bool
+
+pub fn vector2_floor_ffi(@js.Value) -> Unit
+
+pub fn vector2_get_component_ffi(@js.Value, Int) -> Float
+
+pub fn vector2_length_ffi(@js.Value) -> Float
+
+pub fn vector2_length_sq_ffi(@js.Value) -> Float
+
+pub fn vector2_lerp_ffi(@js.Value, @js.Value, Float) -> Unit
+
+pub fn vector2_lerp_vectors_ffi(@js.Value, @js.Value, @js.Value, Float) -> Unit
+
+pub fn vector2_manhattan_distance_to_ffi(@js.Value, @js.Value) -> Float
+
+pub fn vector2_manhattan_length_ffi(@js.Value) -> Float
+
+pub fn vector2_max_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector2_min_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector2_multiply_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector2_multiply_scalar_ffi(@js.Value, Float) -> Unit
+
+pub fn vector2_negate_ffi(@js.Value) -> Unit
+
+pub fn vector2_normalize_ffi(@js.Value) -> Unit
+
+pub fn vector2_random_ffi(@js.Value) -> Unit
+
+pub fn vector2_rotate_around_ffi(@js.Value, @js.Value, Float) -> Unit
+
+pub fn vector2_round_ffi(@js.Value) -> Unit
+
+pub fn vector2_round_to_zero_ffi(@js.Value) -> Unit
+
+pub fn vector2_set_component_ffi(@js.Value, Int, Float) -> Unit
+
+pub fn vector2_set_ffi(@js.Value, Float, Float) -> Unit
+
+pub fn vector2_set_length_ffi(@js.Value, Float) -> Unit
+
+pub fn vector2_set_x_ffi(@js.Value, Float) -> Unit
+
+pub fn vector2_set_y_ffi(@js.Value, Float) -> Unit
+
+pub fn vector2_sub_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector2_sub_scalar_ffi(@js.Value, Float) -> Unit
+
+pub fn vector2_sub_vectors_ffi(@js.Value, @js.Value, @js.Value) -> Unit
+
+pub fn vector3_add_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector3_add_scalar_ffi(@js.Value, Float) -> Unit
+
+pub fn vector3_add_scaled_vector_ffi(@js.Value, @js.Value, Float) -> Unit
+
+pub fn vector3_add_vectors_ffi(@js.Value, @js.Value, @js.Value) -> Vector3
+
+pub fn vector3_angle_to_ffi(@js.Value, @js.Value) -> Float
+
+pub fn vector3_applye_axis_angle_ffi(@js.Value, @js.Value, Float) -> Unit
+
+pub fn vector3_ceil_ffi(@js.Value) -> Unit
+
+pub fn vector3_clamp_ffi(@js.Value, @js.Value, @js.Value) -> Unit
+
+pub fn vector3_clamp_length_ffi(@js.Value, Float, Float) -> Unit
+
+pub fn vector3_clamp_scalar_ffi(@js.Value, Float, Float) -> Unit
+
+pub fn vector3_clone_ffi(@js.Value) -> Vector3
+
+pub fn vector3_copy_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector3_cross_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector3_cross_vectors_ffi(@js.Value, @js.Value, @js.Value) -> Vector3
+
+pub fn vector3_distance_to_ffi(@js.Value, @js.Value) -> Float
+
+pub fn vector3_distance_to_squared_ffi(@js.Value, @js.Value) -> Float
+
+pub fn vector3_divide_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector3_divide_scalar_ffi(@js.Value, Float) -> Unit
+
+pub fn vector3_dot_ffi(@js.Value, @js.Value) -> Float
+
+pub fn vector3_equals_ffi(@js.Value, @js.Value) -> Bool
+
+pub fn vector3_floor_ffi(@js.Value) -> Unit
+
+pub fn vector3_get_component_ffi(@js.Value, Int) -> Float
+
+pub fn vector3_length_ffi(@js.Value) -> Float
+
+pub fn vector3_length_sq_ffi(@js.Value) -> Float
+
+pub fn vector3_lerp_ffi(@js.Value, @js.Value, Float) -> Unit
+
+pub fn vector3_lerp_vectors_ffi(@js.Value, @js.Value, @js.Value, Float) -> Vector3
+
+pub fn vector3_manhattan_distance_to_ffi(@js.Value, @js.Value) -> Float
+
+pub fn vector3_manhattan_length_ffi(@js.Value) -> Float
+
+pub fn vector3_max_ffi(@js.Value, @js.Value) -> Vector3
+
+pub fn vector3_min_ffi(@js.Value, @js.Value) -> Vector3
+
+pub fn vector3_multiply_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector3_multiply_scalar_ffi(@js.Value, Float) -> Vector3
+
+pub fn vector3_multiply_vectors_ffi(@js.Value, @js.Value, @js.Value) -> Vector3
+
+pub fn vector3_negate_ffi(@js.Value) -> Unit
+
+pub fn vector3_normalize_ffi(@js.Value) -> Unit
+
+pub fn vector3_project_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector3_project_on_plane_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector3_project_on_vector_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector3_random_direction_ffi(@js.Value) -> Unit
+
+pub fn vector3_random_ffi(@js.Value) -> Unit
+
+pub fn vector3_reflect_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector3_round_ffi(@js.Value) -> Unit
+
+pub fn vector3_round_to_zero_ffi(@js.Value) -> Unit
+
+pub fn vector3_set_component_ffi(@js.Value, Int, Float) -> Unit
+
+pub fn vector3_set_ffi(@js.Value, Float, Float, Float) -> Unit
+
+pub fn vector3_set_from_cylindrical_coords_ffi(@js.Value, Float, Float, Float) -> Unit
+
+pub fn vector3_set_from_spherical_coords_ffi(@js.Value, Float, Float, Float) -> Unit
+
+pub fn vector3_set_length_ffi(@js.Value, Float) -> Unit
+
+pub fn vector3_set_scalar_ffi(@js.Value, Float) -> Unit
+
+pub fn vector3_set_x_ffi(@js.Value, Float) -> Unit
+
+pub fn vector3_set_y_ffi(@js.Value, Float) -> Unit
+
+pub fn vector3_set_z_ffi(@js.Value, Float) -> Unit
+
+pub fn vector3_sub_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector3_sub_scalar_ffi(@js.Value, Float) -> Unit
+
+pub fn vector3_sub_vectors_ffi(@js.Value, @js.Value, @js.Value) -> Vector3
+
+pub fn vector3_unproject_ffi(@js.Value, @js.Value) -> Unit
+
+pub fn vector3_x_ffi(@js.Value) -> Float
+
+pub fn vector3_y_ffi(@js.Value) -> Float
+
+pub fn vector3_z_ffi(@js.Value) -> Float
 
 // Errors
 
 // Types and methods
+type Box2
+pub fn Box2::new(Vector2, Vector2) -> Self
+pub impl IsBox2 for Box2
+pub impl @js.Cast for Box2
+
 #external
 pub type BufferGeometry
 
 #external
 pub type Camera
-fn Camera::add(Self, @js.Value) -> Unit // from trait `IsObject`
-fn Camera::cast_shadow(Self) -> Bool // from trait `IsObject`
-fn Camera::from(Self) -> @js.Value // from trait `@js.Cast`
-fn Camera::id(Self) -> Int // from trait `IsObject`
-fn Camera::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn Camera::lookat(Self, Float, Float, Float) -> Unit // from trait `IsObject`
-fn Camera::new(Float, Float, Float, Float) -> Self
-fn Camera::set_position(Self, Float, Float, Float) -> Unit // from trait `IsObject`
-fn Camera::set_rotation(Self, Float, Float, Float, String) -> Unit // from trait `IsObject`
-impl IsObject for Camera
-impl @js.Cast for Camera
+pub fn Camera::new() -> Self
+pub impl IsObject for Camera
+pub impl @js.Cast for Camera
+
+type CubeCamera
+pub impl IsCamera for CubeCamera
+pub impl IsCubeCamera for CubeCamera
+pub impl IsObject for CubeCamera
+pub impl @js.Cast for CubeCamera
 
 type DRACOLoader
-fn DRACOLoader::load(Self, String, (GLTF) -> Unit) -> Unit
-fn DRACOLoader::new() -> Self
-fn DRACOLoader::setDecoderPath(Self, String) -> Unit
-impl IsGLTFLoader for DRACOLoader
+pub fn DRACOLoader::load(Self, String, (GLTF) -> Unit) -> Unit
+pub fn DRACOLoader::new() -> Self
+pub fn DRACOLoader::setDecoderPath(Self, String) -> Unit
+pub impl IsGLTFLoader for DRACOLoader
 
 type DirectionalLight
-fn DirectionalLight::add(Self, @js.Value) -> Unit // from trait `IsObject`
-fn DirectionalLight::cast_shadow(Self) -> Bool // from trait `IsObject`
-fn DirectionalLight::from(Self) -> @js.Value // from trait `@js.Cast`
-fn DirectionalLight::id(Self) -> Int // from trait `IsObject`
-fn DirectionalLight::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn DirectionalLight::lookat(Self, Float, Float, Float) -> Unit // from trait `IsObject`
-fn DirectionalLight::new(String, Float) -> Self
-fn DirectionalLight::set_position(Self, Float, Float, Float) -> Unit // from trait `IsObject`
-fn DirectionalLight::set_rotation(Self, Float, Float, Float, String) -> Unit // from trait `IsObject`
-impl IsDirectionalLight for DirectionalLight
-impl IsObject for DirectionalLight
-impl @js.Cast for DirectionalLight
+pub fn DirectionalLight::new(String, Float) -> Self
+pub impl IsDirectionalLight for DirectionalLight
+pub impl IsObject for DirectionalLight
+pub impl @js.Cast for DirectionalLight
 
 type Eluer
+pub impl IsEluer for Eluer
+pub impl @js.Cast for Eluer
 
 type GLTF
-fn GLTF::scene(Self) -> Scene
+pub fn GLTF::scene(Self) -> Scene
 
 type GLTFLoader
-fn GLTFLoader::load(Self, String, (GLTF) -> Unit) -> Unit
-fn GLTFLoader::new() -> Self
-fn GLTFLoader::setDRACOLoader(Self, DRACOLoader) -> Unit
-impl IsGLTFLoader for GLTFLoader
+pub fn GLTFLoader::load(Self, String, (GLTF) -> Unit) -> Unit
+pub fn GLTFLoader::new() -> Self
+pub fn GLTFLoader::setDRACOLoader(Self, DRACOLoader) -> Unit
+pub impl IsGLTFLoader for GLTFLoader
 
 pub(all) struct Geometry {
   bufferGeometry : BufferGeometry
@@ -145,51 +494,53 @@ pub(all) struct Geometry {
 }
 
 type Light
+pub impl IsLight for Light
+pub impl IsObject for Light
+pub impl @js.Cast for Light
 
 type Loader
 
 type Material
-fn Material::from(Self) -> @js.Value // from trait `@js.Cast`
-fn Material::into(@js.Value) -> Self? // from trait `@js.Cast`
-impl IsMaterial for Material
-impl @js.Cast for Material
+pub impl IsMaterial for Material
+pub impl @js.Cast for Material
 
 #external
 pub type Mesh
-fn Mesh::add(Self, @js.Value) -> Unit // from trait `IsObject`
-fn Mesh::cast_shadow(Self) -> Bool // from trait `IsObject`
-fn Mesh::from(Self) -> @js.Value // from trait `@js.Cast`
-fn Mesh::id(Self) -> Int // from trait `IsObject`
-fn Mesh::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn Mesh::lookat(Self, Float, Float, Float) -> Unit // from trait `IsObject`
-fn Mesh::new(BufferGeometry) -> Object
-fn Mesh::set_position(Self, Float, Float, Float) -> Unit // from trait `IsObject`
-fn Mesh::set_rotation(Self, Float, Float, Float, String) -> Unit // from trait `IsObject`
-impl IsObject for Mesh
-impl @js.Cast for Mesh
+pub fn Mesh::new(BufferGeometry) -> Object
+pub impl IsObject for Mesh
+pub impl @js.Cast for Mesh
 
 type MeshPhongMaterial
 
 type Object
-fn Object::add(Self, @js.Value) -> Unit // from trait `IsObject`
-fn Object::cast_shadow(Self) -> Bool // from trait `IsObject`
-fn Object::from(Self) -> @js.Value // from trait `@js.Cast`
-fn Object::id(Self) -> Int // from trait `IsObject`
-fn Object::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn Object::lookat(Self, Float, Float, Float) -> Unit // from trait `IsObject`
-fn Object::set_position(Self, Float, Float, Float) -> Unit // from trait `IsObject`
-fn Object::set_rotation(Self, Float, Float, Float, String) -> Unit // from trait `IsObject`
-impl IsObject for Object
-impl @js.Cast for Object
+pub impl IsObject for Object
+pub impl @js.Cast for Object
 
 type OrbitControl
-fn OrbitControl::from(Self) -> @js.Value // from trait `@js.Cast`
-fn OrbitControl::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn OrbitControl::new(Camera, String) -> Self
-fn OrbitControl::update(Self) -> Bool // from trait `IsOrbitControls`
-impl IsControl for OrbitControl
-impl IsOrbitControls for OrbitControl
-impl @js.Cast for OrbitControl
+pub fn OrbitControl::new(Camera, String) -> Self
+pub impl IsControl for OrbitControl
+pub impl IsOrbitControls for OrbitControl
+pub impl @js.Cast for OrbitControl
+
+type OrthographicCamera
+pub fn OrthographicCamera::new(Float, Float, Float, Float, Float, Float) -> Camera
+pub impl IsCamera for OrthographicCamera
+pub impl IsObject for OrthographicCamera
+pub impl IsOrthographicCamera for OrthographicCamera
+pub impl @js.Cast for OrthographicCamera
+
+type PerspectiveCamera
+pub fn PerspectiveCamera::new(Float, Float, Float, Float) -> Camera
+pub impl IsCamera for PerspectiveCamera
+pub impl IsObject for PerspectiveCamera
+pub impl IsPerspectiveCamera for PerspectiveCamera
+pub impl @js.Cast for PerspectiveCamera
+
+type PointLight
+pub fn PointLight::new(String, Float, Float, Float) -> DirectionalLight
+pub impl IsObject for PointLight
+pub impl IsPointLight for PointLight
+pub impl @js.Cast for PointLight
 
 pub(all) enum Primitive {
   BoxGeometry
@@ -218,63 +569,252 @@ pub(all) enum Primitive {
 
 #external
 pub type Render
-fn Render::newWebGL(String) -> Self
-fn Render::render(Self, @js.Value, Camera) -> Unit
-fn Render::setPixelRatio(Self, Float) -> Unit
-fn Render::setSize(Self, Int, Int, Bool) -> Unit
+pub fn Render::newWebGL(String) -> Self
+pub fn Render::render(Self, @js.Value, Camera) -> Unit
+pub fn Render::setPixelRatio(Self, Float) -> Unit
+pub fn Render::setSize(Self, Int, Int, Bool) -> Unit
 
 #external
 pub type Scene
-fn Scene::add(Self, @js.Value) -> Unit // from trait `IsObject`
-fn Scene::background(Self, String) -> Unit
-fn Scene::cast_shadow(Self) -> Bool // from trait `IsObject`
-fn Scene::from(Self) -> @js.Value // from trait `@js.Cast`
-fn Scene::id(Self) -> Int // from trait `IsObject`
-fn Scene::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn Scene::lookat(Self, Float, Float, Float) -> Unit // from trait `IsObject`
-fn Scene::new() -> Self
-fn Scene::set_position(Self, Float, Float, Float) -> Unit // from trait `IsObject`
-fn Scene::set_rotation(Self, Float, Float, Float, String) -> Unit // from trait `IsObject`
-impl IsObject for Scene
-impl @js.Cast for Scene
+pub fn Scene::background(Self, String) -> Unit
+pub fn Scene::new() -> Self
+pub impl IsObject for Scene
+pub impl @js.Cast for Scene
+
+type Vector2
+pub fn Vector2::new(Float, Float) -> Self
+pub impl IsVector2 for Vector2
+pub impl @js.Cast for Vector2
 
 type Vector3
-fn Vector3::from(Self) -> @js.Value // from trait `@js.Cast`
-fn Vector3::into(@js.Value) -> Self? // from trait `@js.Cast`
-fn Vector3::x(Self) -> Float // from trait `IsVector3`
-impl IsVector3 for Vector3
-impl @js.Cast for Vector3
+pub fn Vector3::new(Float, Float, Float) -> Self
+pub impl IsVector3 for Vector3
+pub impl @js.Cast for Vector3
 
 // Type aliases
 
 // Traits
+pub trait IsBox2 : @js.Cast {
+  clamp_point(Self, Vector2, Vector2) -> Vector2
+  clone(Self) -> Box2
+  contains_box(Self, Box2) -> Bool
+  contains_point(Self, Vector2) -> Bool
+  copy(Self, Box2) -> Unit
+  distance_to_point(Self, Vector2) -> Float
+  equals(Self, Box2) -> Bool
+  expand_by_point(Self, Vector2) -> Unit
+  expand_by_scalar(Self, Float) -> Unit
+  expand_by_vector(Self, Vector2) -> Unit
+  get_center(Self, Vector2) -> Vector2
+  get_parameter(Self, Vector2, Vector2) -> Vector2
+  get_size(Self, Vector2) -> Vector2
+  intersect(Self, Box2) -> Unit
+  intersects_box(Self, Box2) -> Bool
+  is_empty(Self) -> Bool
+  make_empty(Self) -> Unit
+  set(Self, Vector2, Vector2) -> Unit
+  set_from_center_and_size(Self, Vector2, Vector2) -> Unit
+  translate(Self, Vector2) -> Unit
+  union(Self, Box2) -> Unit
+}
+
+pub trait IsCamera : IsObject {
+  get_world_direction(Self, Vector3) -> Vector3
+}
+
 pub trait IsControl : @js.Cast {
 }
 
-pub trait IsDirectionalLight : IsObject {
+pub trait IsCubeCamera : IsCamera {
+  update_coordinate_system(Self) -> Unit
+}
+
+pub trait IsDirectionalLight : IsLight {
+}
+
+pub trait IsEluer : @js.Cast {
+  x(Self) -> Float
+  y(Self) -> Float
+  z(Self) -> Float
+  order(Self) -> String
+  set(Self, Float, Float, Float, String) -> Unit
 }
 
 pub trait IsGLTFLoader {
+}
+
+pub trait IsLight : IsObject {
 }
 
 pub trait IsMaterial : @js.Cast {
 }
 
 pub trait IsObject : @js.Cast {
-  add(Self, @js.Value) -> Unit
   cast_shadow(Self) -> Bool
   id(Self) -> Int
+  add(Self, Object) -> Unit
+  attach(Self, Object) -> Unit
+  clear(Self) -> Unit
+  clone(Self, Bool) -> Object
+  copy(Self, Object, Bool) -> Object
+  get_world_direction(Self, Vector3) -> Vector3
+  get_world_position(Self, Vector3) -> Vector3
+  get_world_scale(Self, Vector3) -> Vector3
+  local_to_world(Self, Vector3) -> Vector3
+  lookat(Self, Float, Float, Float) -> Unit
+  remove(Self, @js.Value) -> Unit
+  remove_from_parent(Self) -> Unit
+  rotate_on_axis(Self, Vector3, Float) -> Unit
+  rotate_on_world_axis(Self, Vector3, Float) -> Unit
+  rotate_x(Self, Float) -> Unit
+  rotate_y(Self, Float) -> Unit
+  rotate_z(Self, Float) -> Unit
+  set_rotation_from_axis_angle(Self, Vector3, Float) -> Unit
+  translate_on_axis(Self, Vector3, Float) -> Unit
+  translate_x(Self, Float) -> Unit
+  translate_y(Self, Float) -> Unit
+  translate_z(Self, Float) -> Unit
+  update_matrix(Self) -> Unit
+  world_to_local(Self, Vector3) -> Vector3
   set_position(Self, Float, Float, Float) -> Unit
   set_rotation(Self, Float, Float, Float, String) -> Unit
-  lookat(Self, Float, Float, Float) -> Unit
 }
 
 pub trait IsOrbitControls : IsControl {
   update(Self) -> Bool
 }
 
+pub trait IsOrthographicCamera : IsCamera {
+  clear_view_offset(Self) -> Unit
+  set_view_offset(Self, Float, Float, Float, Float, Float, Float) -> Unit
+  update_projection_matrix(Self) -> Unit
+}
+
+pub trait IsPerspectiveCamera : IsCamera {
+  clear_view_offset(Self) -> Unit
+  get_effective_fov(Self) -> Float
+  get_film_height(Self) -> Float
+  get_film_width(Self) -> Float
+  get_focal_length(Self) -> Float
+  set_focal_length(Self, Float) -> Unit
+  set_view_offset(Self, Float, Float, Float, Float, Float, Float) -> Unit
+  update_projection_matrix(Self) -> Unit
+}
+
+pub trait IsPointLight : IsLight {
+  decay(Self) -> Float
+  distance(Self) -> Float
+}
+
+pub trait IsVector2 : @js.Cast {
+  add(Self, Vector2) -> Unit
+  add_scalar(Self, Float) -> Unit
+  add_scalar_vector(Self, Vector2, Float) -> Unit
+  add_vectors(Self, Vector2, Vector2) -> Unit
+  angle(Self) -> Float
+  angle_to(Self, Vector2) -> Float
+  ceil(Self) -> Unit
+  clamp(Self, Vector2, Vector2) -> Unit
+  clamp_scalar(Self, Float, Float) -> Unit
+  clamp_length(Self, Float, Float) -> Unit
+  clone(Self) -> Vector2
+  copy(Self, Vector2) -> Unit
+  cross(Self, Vector2) -> Float
+  distance_to(Self, Vector2) -> Float
+  distance_to_squared(Self, Vector2) -> Float
+  divide(Self, Vector2) -> Unit
+  divide_scalar(Self, Float) -> Unit
+  dot(Self, Vector2) -> Float
+  equals(Self, Vector2) -> Bool
+  floor(Self) -> Unit
+  get_component(Self, Int) -> Float
+  length(Self) -> Float
+  length_sq(Self) -> Float
+  lerp(Self, Vector2, Float) -> Unit
+  lerp_vectors(Self, Vector2, Vector2, Float) -> Unit
+  manhattan_distance_to(Self, Vector2) -> Float
+  manhattan_length(Self) -> Float
+  max(Self, Vector2) -> Unit
+  min(Self, Vector2) -> Unit
+  multiply(Self, Vector2) -> Unit
+  multiply_scalar(Self, Float) -> Unit
+  negate(Self) -> Unit
+  normalize(Self) -> Unit
+  random(Self) -> Unit
+  rotate_around(Self, Vector2, Float) -> Unit
+  round(Self) -> Unit
+  round_to_zero(Self) -> Unit
+  set(Self, Float, Float) -> Unit
+  set_component(Self, Int, Float) -> Unit
+  set_length(Self, Float) -> Unit
+  set_scalar(Self, Float) -> Unit
+  set_x(Self, Float) -> Unit
+  set_y(Self, Float) -> Unit
+  sub(Self, Vector2) -> Unit
+  sub_scalar(Self, Float) -> Unit
+  sub_vectors(Self, Vector2, Vector2) -> Unit
+}
+
 pub trait IsVector3 : @js.Cast {
   x(Self) -> Float
+  y(Self) -> Float
+  z(Self) -> Float
+  add(Self, Vector3) -> Unit
+  add_scalar(Self, Float) -> Unit
+  add_scaled_vector(Self, Vector3, Float) -> Unit
+  add_vectors(Self, Vector3, Vector3) -> Vector3
+  angle_to(Self, Vector3) -> Float
+  apply_axis_angle(Self, Vector3, Float) -> Unit
+  ceil(Self) -> Unit
+  clamp(Self, Vector3, Vector3) -> Unit
+  clamp_length(Self, Float, Float) -> Unit
+  clamp_scalar(Self, Float, Float) -> Unit
+  clone(Self) -> Vector3
+  copy(Self, Vector3) -> Unit
+  cross(Self, Vector3) -> Unit
+  cross_vectors(Self, Vector3, Vector3) -> Vector3
+  distance_to(Self, Vector3) -> Float
+  distance_to_squared(Self, Vector3) -> Float
+  divide(Self, Vector3) -> Unit
+  divide_scalar(Self, Float) -> Unit
+  dot(Self, Vector3) -> Float
+  equals(Self, Vector3) -> Bool
+  floor(Self) -> Unit
+  get_component(Self, Int) -> Float
+  length(Self) -> Float
+  length_sq(Self) -> Float
+  lerp(Self, Vector3, Float) -> Unit
+  lerp_vectors(Self, Vector3, Vector3, Float) -> Vector3
+  manhattan_distance_to(Self, Vector3) -> Float
+  manhattan_length(Self) -> Float
+  max(Self, Vector3) -> Vector3
+  min(Self, Vector3) -> Vector3
+  multiply(Self, Vector3) -> Unit
+  multiply_scalar(Self, Float) -> Vector3
+  multiply_vectors(Self, Vector3, Vector3) -> Vector3
+  negate(Self) -> Unit
+  normalize(Self) -> Unit
+  project(Self, Camera) -> Unit
+  project_on_plane(Self, Vector3) -> Unit
+  project_on_vector(Self, Vector3) -> Unit
+  random(Self) -> Unit
+  random_direction(Self) -> Unit
+  reflect(Self, Vector3) -> Unit
+  round(Self) -> Unit
+  round_to_zero(Self) -> Unit
+  set(Self, Float, Float, Float) -> Unit
+  set_component(Self, Int, Float) -> Unit
+  set_from_cylindrical_coords(Self, Float, Float, Float) -> Unit
+  set_from_spherical_coords(Self, Float, Float, Float) -> Unit
+  set_length(Self, Float) -> Unit
+  set_scalar(Self, Float) -> Unit
+  set_x(Self, Float) -> Unit
+  set_y(Self, Float) -> Unit
+  set_z(Self, Float) -> Unit
+  sub(Self, Vector3) -> Unit
+  sub_scalar(Self, Float) -> Unit
+  sub_vectors(Self, Vector3, Vector3) -> Vector3
+  unproject(Self, Camera) -> Unit
 }
 
 pub trait IsWebGLRenderer {
