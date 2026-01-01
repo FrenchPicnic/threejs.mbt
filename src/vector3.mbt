@@ -443,7 +443,7 @@ impl IsVector3 with unproject(self, camera : Camera) -> Unit {
 }
 
 ///|
-pub extern "js" fn Vector3::new(x : Float, y : Float, z : Float) -> Unit = "(x,y,z) => new THREE.Vector3(x,y,z)"
+pub extern "js" fn Vector3::new(x : Float, y : Float, z : Float) -> Vector3 = "(x,y,z) => new THREE.Vector3(x,y,z)"
 
 ///|
 pub extern "js" fn vector3_x_ffi(vec : @js.Value) -> Float = "(vec) => vec.x"

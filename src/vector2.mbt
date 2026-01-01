@@ -325,6 +325,9 @@ impl IsVector2 with sub_vectors(self, a : Vector2, b : Vector2) -> Unit {
 }
 
 ///|
+pub extern "js" fn Vector2::new(x : Float, y : Float) -> Vector2 = "(x,y) => new THREE.Vector2(x,y)"
+
+///|
 pub extern "js" fn ffi_to_vector2(x : @js.Value) -> @js.Nullable[Vector2] = "(x) => x instanceof THREE.Vector2 ? x : null"
 
 ///|
