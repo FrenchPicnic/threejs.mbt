@@ -439,7 +439,7 @@ impl IsVector3 with sub_vectors(self, a : Vector3, b : Vector3) -> Vector3 {
 
 ///|
 impl IsVector3 with unproject(self, camera : Camera) -> Unit {
-  vector3_sub_scalar_ffi(self |> js_identity, camera |> js_identity)
+  vector3_unproject_ffi(self |> js_identity, camera |> js_identity)
 }
 
 ///|
